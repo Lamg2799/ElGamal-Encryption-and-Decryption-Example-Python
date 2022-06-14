@@ -1,6 +1,6 @@
 import random
 
-def convertLettersToIntChunks(message, q):
+def convert_letters_to_int_chunks(message, q):
     """
     Converts letters into integer chunks less than q.
 
@@ -34,7 +34,7 @@ def convertLettersToIntChunks(message, q):
     print("original message as int string split into blocks of less than q:\n", msg_chunks, "\n")
     return msg_chunks
 
-def keyGen(q, prim_root):
+def key_gen(q, prim_root):
     """
     Generates a private and public key pair.
 
@@ -137,8 +137,8 @@ def main():
     print("primitive root: ", prim_root)
     print("Original Message: ", message + "\n")
 
-    pr_key, pub_key = keyGen(q, prim_root)
-    message_into_int_chunks = convertLettersToIntChunks(message, 71)
+    pr_key, pub_key = key_gen(q, prim_root)
+    message_into_int_chunks = convert_letters_to_int_chunks(message, 71)
 
     cipher = encrypt(message_into_int_chunks, pub_key, q)
     print("cipher (Pairs of (c1, c2) as blocks that are smaller than q):")
